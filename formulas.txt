@@ -1,10 +1,16 @@
-Ano Geração = IF(pokemon[Generation]=1;1999;
-IF(pokemon[Generation]=2;2002;
-IF(pokemon[Generation]=3;2004;
-IF(pokemon[Generation]=4;2010;
-IF(pokemon[Generation]=5;2013;
-IF(pokemon[Generation]=6;2016;
-IF(pokemon[Generation]=7;2017;0)))))))
+Ano Geração = 
+SWITCH (
+    pokemon[Generation],
+    1, 1999,
+    2, 2002,
+    3, 2004,
+    4, 2010,
+    5, 2013,
+    6, 2016,
+    7, 2017
+)
+
+Total de Pokemons = COUNT(pokemon[ID])
 
 Total de Lendários = COUNT(pokemon[Legendary])
 
@@ -12,7 +18,6 @@ Numero de Gerações = DISTINCTCOUNT(pokemon[Generation])
 
 Média Geração = [Total de Pokemons] / [Numero de Gerações] 
 
-Total de Pokemons = COUNT(pokemon[ID])
 
 
 
